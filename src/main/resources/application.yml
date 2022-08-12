@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: catalog-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   h2:
     console:
       enabled: true
@@ -31,3 +36,9 @@ eureka:
 logging:
   level:
     com.example.catalogservice: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, busrefresh
